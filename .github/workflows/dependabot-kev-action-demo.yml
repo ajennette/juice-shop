@@ -1,0 +1,12 @@
+name: 'Dependabot KEV Action'
+on: [push]
+
+jobs:
+  dependabot-kev-action:
+    name: 'CISA KEV Compliance Check'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'KEV Policy'
+        uses: advanced-security/dependabot-kev-action@v0
+        env:
+            GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
